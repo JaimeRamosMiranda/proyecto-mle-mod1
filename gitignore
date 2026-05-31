@@ -1,0 +1,64 @@
+# ─── Python ───────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg
+*.egg-info/
+dist/
+build/
+eggs/
+parts/
+var/
+sdist/
+develop-eggs/
+.installed.cfg
+lib/
+lib64/
+
+# ─── Entornos virtuales ───────────────────────────────────────────
+.env
+.venv
+env/
+venv/
+ENV/
+
+# ─── Jupyter ──────────────────────────────────────────────────────
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# ─── Datos sensibles / pesados ────────────────────────────────────
+# Descomenta si no quieres subir el CSV crudo al repo
+# data/*.csv
+data/*.parquet
+data/datos_estandarizados.csv
+data/datos_originales_limpios.csv
+data/target.csv
+
+# ─── Artefactos generados (opcionales, se pueden regenerar) ───────
+# Descomenta si prefieres no versionar las imágenes generadas
+# artifacts/*.png
+
+# ─── Sistema operativo ────────────────────────────────────────────
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# ─── IDEs ─────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ─── Miscelánea ───────────────────────────────────────────────────
+*.log
+*.tmp
+tmp/
