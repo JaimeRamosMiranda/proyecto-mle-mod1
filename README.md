@@ -34,7 +34,7 @@ A diferencia del uso supervisado del dataset (predicción de fallecimiento), aqu
 
 ## 2. Diagrama de flujo del proyecto
 
-![Diagrama de Flujo del Proyecto](https://raw.githubusercontent.com/jramosm-ds/proyecto-mle-mod1/main/artifacts/flujo_proyecto.png)
+![Diagrama de Flujo del Proyecto](https://raw.githubusercontent.com/jramosm-ds/proyecto-mle-mod1/main/artifacts/flujo_proyecto_heart_failure.png)
 *(Nota: El diagrama visual resume las etapas de adquisición, preprocesamiento con Mahalanobis, optimización de K, entrenamiento y validación clínica).*
 
 ---
