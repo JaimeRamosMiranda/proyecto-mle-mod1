@@ -113,54 +113,44 @@ Para el desarrollo del proyecto se utilizaron las siguientes librerías de Pytho
 | **Índice Calinski-Harabasz** | 29.79 | Relación entre dispersión inter e intra-cluster |
 | **Inercia (WSS)** | 2194.36 | Suma de distancias al cuadrado dentro de los clusters |
 
-### 6.2 Métricas de evaluación online (validación clínica)
+### 6.2 Caracterización clínica de los fenotipos
 
-Se utiliza la variable `DEATH_EVENT` para verificar si los clusters capturan diferencias reales en el riesgo de mortalidad.
+**Cuadro N°1: Características clínicas de acuerdo a los pacientes en cada conglomerado**
 
-| Fenotipo | N Pacientes | Fallecidos | Tasa de Mortalidad |
-|---|---|---|---|
-| **Fenotipo 1** | 69 | 19 | 27.5% |
-| **Fenotipo 2** | 79 | 19 | 24.1% |
-| **Fenotipo 3** | 90 | 15 | 16.7% |
-| **Fenotipo 4** | 45 | 33 | **73.3%** ⚠️ |
-
-### 6.3 Perfiles de fenotipos
-
-#### Variables Continuas (Promedios)
-
-| Variable | Fenotipo 1 | Fenotipo 2 | Fenotipo 3 | Fenotipo 4 |
+| Variables | Fenotipo 1 | Fenotipo 2 | Fenotipo 3 | Fenotipo 4 |
 |---|---|---|---|---|
-| Edad (años) | 60.5 | 59.7 | 56.9 | **71.7** |
+| | (n= 69) | (n= 79) | (n= 90) | (n= 45) |
+| **Variables numéricas (Medias)** | | | | |
+| Edad (años) | 60.5 | 59.7 | 56.9 | 71.7 |
 | CPK (mcg/L) | 438.9 | 469.0 | 528.9 | 390.0 |
-| Fracción eyección (%) | 39.2 | 37.7 | 40.7 | **31.1** |
-| Plaquetas (/mL) | 268 881 | 260 512 | 265 005 | 229 136 |
-| Creatinina sérica (mg/dL) | 1.11 | 1.17 | 1.18 | **1.99** |
-| Sodio sérico (mEq/L) | 137.0 | 137.4 | 137.8 | **133.6** |
-| Tiempo seguimiento (días) | 117.1 | 142.6 | **161.7** | 81.5 |
-
-#### Variables Categóricas (% con condición)
-
-| Condición | Fenotipo 1 | Fenotipo 2 | Fenotipo 3 | Fenotipo 4 |
-|---|---|---|---|---|
+| Fracción de eyección (%) | 39.2 | 37.7 | 40.7 | 31.1 |
+| Plaquetas (/mL) | 268,881 | 260,512 | 265,005 | 229,136 |
+| Creatinina sérica (mg/dL) | 1.11 | 1.17 | 1.18 | 1.99 |
+| Sodio sérico (mEq/L) | 137.0 | 137.4 | 137.8 | 133.6 |
+| Seguimiento (días) | 117.1 | 142.6 | 161.7 | 81.5 |
+| **Variables categóricas (Frecuencias)** | | | | |
 | Anemia | 46.4% | 35.4% | 45.6% | 46.7% |
 | Diabetes | 44.9% | 31.6% | 55.6% | 24.4% |
-| Hipertensión | **100.0%** | 29.1% | 0.0% | 20.0% |
-| Sexo Masculino | 39.1% | **100.0%** | 42.2% | 88.9% |
-| Tabaquismo | 2.9% | **100.0%** | 0.0% | 17.8% |
-
-### 6.4 Interpretación Clínica
-
-| Fenotipo | Nombre descriptivo | Perfil clave | Riesgo |
-|---|---|---|---|
-| **F1** | Hipertenso controlado | 100% hipertensión, mayoría mujeres | Moderado |
-| **F2** | Hombre fumador activo | 100% masculino, 100% tabaquismo | Moderado-bajo |
-| **F3** | Joven diabético estable | Menor edad, mejor función cardíaca | Bajo |
-| **F4** | Anciano con fallo multiorgánico | Mayor edad, creatinina alta, sodio bajo | **Crítico** |
+| Hipertensión | 100.0% | 29.1% | 0.0% | 20.0% |
+| Sexo (Hombre) | 39.1% | 100.0% | 42.2% | 88.9% |
+| Tabaquismo | 2.9% | 100.0% | 0.0% | 17.8% |
+| **Sobrevivencia (Mortalidad)** | | | | |
+| Fallecidos | 27.5% | 24.1% | 16.7% | 73.3% |
 
 ---
 
-## 7. Conclusiones
+## 7. Conclusiones e Interpretación de Fenotipos
 
-1. **Estratificación efectiva:** El algoritmo K-Means identificó 4 fenotipos con tasas de mortalidad significativamente diferentes, validando la hipótesis inicial.
-2. **Fenotipo de Alto Riesgo:** El Fenotipo 4 es el más crítico (73.3% mortalidad), caracterizado por edad avanzada y deterioro de la función renal.
-3. **Utilidad de IA Generativa:** La integración con LLM permite una interpretación rápida y experta de los perfiles estadísticos, facilitando la toma de decisiones clínicas.
+### Interpretación por Conglomerado
+
+**Fenotipo 1 (n=69): "Paciente hipertenso de riesgo moderado"**  
+Este grupo se caracteriza por una prevalencia del 100% de hipertensión arterial. Presenta una edad media de 60.5 años. La fracción de eyección media es de 39.2%, situándose en el límite de la disfunción sistólica moderada (referencia < 40%). Los niveles de creatinina (1.11 mg/dL) y sodio (137 mEq/L) se encuentran dentro de rangos normales. Es un grupo mayoritariamente femenino (60.9% mujeres) y con muy baja incidencia de tabaquismo (2.9%). La mortalidad registrada fue del 27.5%, un nivel intermedio comparado con el resto de los fenotipos.
+
+**Fenotipo 2 (n=79): "Hombre fumador de riesgo moderado-bajo"**  
+Este fenotipo está compuesto exclusivamente por hombres (100%) y fumadores activos (100%). La edad media es de 59.7 años. Presentan la segunda menor fracción de eyección media (37.7%), indicando un compromiso cardíaco notable. Sin embargo, su función renal es estable (creatinina 1.17 mg/dL) y los niveles de sodio son normales (137.4 mEq/L). A pesar de los factores de riesgo conductuales (tabaquismo), presentan una mortalidad del 24.1%, menor que la del grupo hipertenso (F1).
+
+**Fenotipo 3 (n=90): "Paciente joven con perfil clínico estable"**  
+Es el grupo más numeroso y el de menor edad media (56.9 años). Se caracteriza por tener la mayor fracción de eyección media (40.7%) y el mayor tiempo de seguimiento clínico (161.7 días), lo que sugiere una mejor estabilidad. Curiosamente, tiene la mayor frecuencia de diabetes (55.6%) pero una nula incidencia de hipertensión (0%) y tabaquismo (0%). Este perfil metabólico pero no vascular se traduce en la mortalidad más baja de todo el estudio (16.7%).
+
+**Fenotipo 4 (n=45): "Paciente anciano con fallo multiorgánico y riesgo crítico"**  
+Este fenotipo representa el perfil de mayor gravedad. Posee la edad media más avanzada (71.7 años). Clínicamente, presenta una combinación de factores de mal pronóstico: la fracción de eyección más baja (31.1%), hipercreatininemia (1.99 mg/dL, indicativo de insuficiencia renal) e hiponatremia leve (sodio 133.6 mEq/L, referencia normal > 135). Es un grupo mayoritariamente masculino (88.9%). Estas condiciones se reflejan en una mortalidad crítica del 73.3%, la más alta detectada, validando la capacidad del modelo para identificar pacientes en estado terminal o de alto riesgo.
