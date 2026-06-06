@@ -1,7 +1,7 @@
-# 🫀 Identificación de Fenotipos de Pacientes con Insuficiencia Cardíaca mediante Análisis de Conglomerados
+# Identificación de Fenotipos de Pacientes con Insuficiencia Cardíaca mediante Análisis de Conglomerados
 
 > **Proyecto Curso I — Especialización Machine Learning Engineering**  
-> Grupo 4 | Durand Chuquisana, Katherine · Pizarro Castro, Karen · Ramos Miranda, Jaime · Rodríguez Pacheco, Carlos
+Ramos Miranda, Jaime
 
 ---
 
@@ -307,4 +307,4 @@ python src/analisis_conglomerados_heart_failure.py
 
 ---
 
-*Proyecto académico — Especialización Machine Learning Engineering · Junio 2026*
+*Especialización Machine Learning Engineering · Junio 2026*
